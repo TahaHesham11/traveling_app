@@ -1,10 +1,9 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:traveling_app/app.dart';
 import 'package:traveling_app/widgets/category_item.dart';
+
+
 class CategoriesScreen extends StatelessWidget {
-
-
   @override
   Widget build(BuildContext context) {
     return  GridView(

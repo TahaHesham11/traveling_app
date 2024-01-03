@@ -21,7 +21,6 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
 
 
-  // كلهم بيكونو false عشان هما في الاول مبيكونوش شغالين
   Map<String, bool> filters={
     'summer' : false,
     'winter' : false,
@@ -33,16 +32,13 @@ class _MyAppState extends State<MyApp> {
   List<Trip> favoriteTrips = [];
 
 
-  // دي الميثود اللي بتحفظ التغييرات
   void changeFilters(Map<String, bool> filterData)
   {
     setState(() {
-      // filterData هي قيمه القيمه الديده بتاعت الفلتر اللي هتيجي من changeFilters
       filters =  filterData;
 
       availableTrip = Trips_data.where((element) {
 
-  // لو كان الفلتر اشتغل ودوست عليه ولو ده حصل لازم تفحص قيمه ان IsInSummer لا تساةي قيمه true كده مش  هيعرض الرحله
         if(filters['summer'] == true && element.isInSummer != true)
         {
           return false;
@@ -55,7 +51,6 @@ class _MyAppState extends State<MyApp> {
         {
           return false;
         }
-        // كده هيعرض كل الرحلات لو كل اتحقق ان هو false
         return true;
 
       }
@@ -67,13 +62,10 @@ class _MyAppState extends State<MyApp> {
 
 
   void manageFavorite(String tripId) {
-    // indexwhere بقوله ابحث عن عنصر محدد وهيدينا رقم الرحله من List اللي اسمها favoriteTrips
 
-    // باختصار هذا السطر بيعرفني موجوده في قائمه المفضله او لسه غير موجود
   final existingIndex =  favoriteTrips.indexWhere((element) =>
       element.id == tripId
   );
-  //معني كده ان في رحله وكده هحذف
   if(existingIndex >= 0)
   {
     setState(() {
@@ -90,7 +82,6 @@ class _MyAppState extends State<MyApp> {
   };
   }
 
-  // هنا ببحث ان الرحله موجوده في قائمه المفضله ولا لا
   bool isFavorite(String id)
   {
    return favoriteTrips.any((element) =>
@@ -132,7 +123,6 @@ class _MyAppState extends State<MyApp> {
         )
       ),
 
-  //    home: TabsScreen(),
 
       initialRoute: '/',
       routes: {

@@ -5,9 +5,8 @@ class FilterScreen extends StatefulWidget {
 
   static const screenRoute = '/filters' ;
 
-  // هي دي changeFilters بس انا غيرت اسمها عشان تكون اسمها مختلف
-final Function saveFilters;//changeFilters
-final Map<String , bool> currentFilters;//filters
+final Function saveFilters;
+final Map<String , bool> currentFilters;
 
 
   FilterScreen(this.currentFilters,this.saveFilters);
@@ -18,7 +17,6 @@ final Map<String , bool> currentFilters;//filters
 
 class _FilterScreenState extends State<FilterScreen> {
 
-// دول القيم الاوليه اللي بتكون ظهاره قبل ما المستخدم يغير فيهم
   var _Summer=false;
   var _Winter=false;
   var _Family=false;
@@ -26,7 +24,6 @@ class _FilterScreenState extends State<FilterScreen> {
   @override
   void initState() {
 
-    // هنا كنت عايز اساوي المتغيرات بالقيمه اللي جايه بعد التغيير
 _Summer = widget.currentFilters['summer']!;
 _Winter = widget.currentFilters['winter']!;
 _Family = widget.currentFilters['family']!;
@@ -42,9 +39,7 @@ _Family = widget.currentFilters['family']!;
         ),
         actions: [
           IconButton(
-            // هنا هحط الميثود الي بتحفظ قيمه الفلاتر الجديده
               onPressed:(){
-                // كده مررت المتغيرات عشان يتغيرو
                 final selectedFilters = {
                   'summer' : _Summer,
                   'winter' : _Winter,
@@ -52,7 +47,8 @@ _Family = widget.currentFilters['family']!;
 
               widget.saveFilters(selectedFilters);
         } ,
-              icon: Icon(Icons.save))
+              icon: Icon(Icons.save)
+          )
         ],
       ),
       drawer: AppDrawer(),

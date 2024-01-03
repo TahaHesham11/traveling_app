@@ -14,11 +14,8 @@ TripDetailsScreen(this.isFavorite,this.manageFavorite);
   @override
   Widget build(BuildContext context) {
 
-    // tripId هنا هو id بتاع الرحله الواحده
     final tripId = ModalRoute.of(context)!.settings.arguments as String;
-
     final selectTrip = Trips_data.firstWhere((element) => element.id == tripId);
-
     return Scaffold (
       appBar: AppBar(
         title: Text(
@@ -35,9 +32,7 @@ TripDetailsScreen(this.isFavorite,this.manageFavorite);
               child: Image.network(
                 selectTrip.imageUrl,
                 fit: BoxFit.cover,
-              ),
-            ),
-
+              ),),
             buildSectionItem(context,'الانشطه'),
             buildListView(
               ListView.builder(
@@ -67,7 +62,7 @@ TripDetailsScreen(this.isFavorite,this.manageFavorite);
                         leading: CircleAvatar(
 
                           child: Text(
-           // عملت index + 1 عشان index هيعد من اول صفر وان معنديش صفر فقولت ليه عد من اول 1
+
                             ' يوم ${index + 1}'
                           ),
                           radius: 25.0,

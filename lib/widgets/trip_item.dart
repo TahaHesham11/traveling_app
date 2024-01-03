@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:traveling_app/componets.dart';
 import 'package:traveling_app/models/trip.dart';
-import 'package:traveling_app/modules/category_trips_screen.dart';
 import 'package:traveling_app/modules/trip_details_screen.dart';
 
 class TripItem extends StatelessWidget {
@@ -11,7 +9,6 @@ class TripItem extends StatelessWidget {
   final int duration;
   final TripType tripType;
   final Season season;
-//  final Function removeItem;
 
   TripItem({
     required this.id,
@@ -20,7 +17,6 @@ class TripItem extends StatelessWidget {
     required this.duration,
     required this.tripType,
     required this.season,
-  //  required this.removeItem,
 });
 
 String get seasonText{

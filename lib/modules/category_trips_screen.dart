@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:traveling_app/app.dart';
 import 'package:traveling_app/models/trip.dart';
 import '../widgets/trip_item.dart';
+
+
 class CategoryTripsScreen extends StatefulWidget {
-
-// final String categoryId;
-// final String categoryTitle;
-// CategoryTripsScreen( this.categoryId, this.categoryTitle);
-
 
 final List<Trip> availableTrip;
 
@@ -34,7 +30,6 @@ class _CategoryTripsScreenState extends State<CategoryTripsScreen> {
     final categoryId = routeArgument['id'];
     categoryTitle = routeArgument['title'];
 
-    // اللي انا عملته هنا عملت فلتره عشان اجيب categories id مع categoryId عشان لما ادوس علي item البحيرات يجيب الحاجات بتاعته
     filterTrips = widget.availableTrip.where((element) {
 
       return element.categories.contains(categoryId);
@@ -47,7 +42,6 @@ void removeTrip(String tripId)
 {
 
   setState(() {
-    // اللي انا عملته هما عشان لو id = id نفس بعض يمسح id
     filterTrips.removeWhere((element) => element.id == tripId
     );
   });
@@ -75,7 +69,6 @@ void removeTrip(String tripId)
               tripType: filterTrips[index].tripType,
               season:  filterTrips[index].season,
 
-        //  removeItem: removeTrip,
           );
 
           },

@@ -13,7 +13,6 @@ class FavoriteScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    // هنا بقوله لو القائمه مفيهاش اي favorite اعرض الكلمه دي
     if(favoriteTrips.isEmpty) {
       return Center(child: Text (' ليس لديك اي رحله في قائمه المفضله'));
 
@@ -30,7 +29,6 @@ class FavoriteScreen extends StatelessWidget {
     tripType: favoriteTrips[index].tripType,
     season:  favoriteTrips[index].season,
 
-  //  removeItem: removeTrip,
     );
 
     },

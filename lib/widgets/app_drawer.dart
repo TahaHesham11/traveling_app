@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:traveling_app/componets.dart';
 import 'package:traveling_app/modules/filter_screen.dart';
-import 'package:traveling_app/modules/taps_screen.dart';
 
 class AppDrawer extends StatelessWidget {
 
